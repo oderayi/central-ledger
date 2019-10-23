@@ -100,9 +100,10 @@ services:
       - mockserver
     volumes:
       - ./docker/wait-for/wait-for-mockserver.sh:/opt/wait-for/wait-for-mockserver.sh
+      - ./docker/wait-for/wait-for.env:/opt/wait-for/wait-for.env
     entrypoint: [ "sh", "-c" ]
     command:
-      - /opt/wait-for-mockserver.sh
+      - /opt/wait-for/wait-for-mockserver.sh
     environment: []
     networks:
       - cl-mojaloop-net
